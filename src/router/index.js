@@ -70,8 +70,13 @@ function configRoutes () {
   return [
     {
       path: '/',
-      redirect: '/dashboard',
-      name: 'Home',
+      name: 'Login',
+      component: Login
+    },
+    {
+      path: '/',
+      name: 'home',
+      redirect: '/dasboard',
       component: TheContainer,
       children: [
         {
