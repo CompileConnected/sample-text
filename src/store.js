@@ -1,27 +1,17 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import VuexPersist from 'vuex-persist'
+
+import modules from './persistence'
+console.log("MMM", modules)
 Vue.use(Vuex)
 
-const state = {
-  sidebarShow: 'responsive',
-  sidebarMinimize: false
-}
-
-const mutations = {
-  toggleSidebarDesktop (state) {
-    const sidebarOpened = [true, 'responsive'].includes(state.sidebarShow)
-    state.sidebarShow = sidebarOpened ? false : 'responsive'
-  },
-  toggleSidebarMobile (state) {
-    const sidebarClosed = [false, 'responsive'].includes(state.sidebarShow)
-    state.sidebarShow = sidebarClosed ? true : 'responsive'
-  },
-  set (state, [variable, value]) {
-    state[variable] = value
-  }
-}
+const vuexPersist = new VuexPersist({
+  key: "52508dc6-bae8-4ac3-8f1c-0bad26bbdb76",
+  storage: localStorage  
+})
 
 export default new Vuex.Store({
-  state,
-  mutations
+  plugins: [vuexPersist.plugin], 
+  modules
 })

@@ -6,7 +6,7 @@
           <CCardGroup>
             <CCard class="p-4">
               <CCardBody>
-                <CForm>
+                <CForm @submit.prevent="onSubmit">
                   <h1>Login</h1>
                   <p class="text-muted">Sign In to your account</p>
                   <CInput
@@ -24,7 +24,7 @@
                   </CInput>
                   <CRow>
                     <CCol col="6" class="text-left">
-                      <CButton color="primary" class="px-4">Login</CButton>
+                      <CButton color="primary" class="px-4" type="submit">Login</CButton>
                     </CCol>
                     <CCol col="6" class="text-right">
                       <CButton color="link" class="px-0">Forgot password?</CButton>
@@ -61,6 +61,12 @@
 
 <script>
 export default {
-  name: 'Login'
+  name: 'Login',
+  methods: {
+    onSubmit() {
+        this.$store.commit("Login/setToken", "bd6ba01c-1b24-45de-8abb-7fe74d26c11c")
+        this.$router.push("/dashboard")
+    }
+  }
 }
 </script>
