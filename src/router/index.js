@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+//extendo
+const Product = () => import('@/views/product/Product')
+
+
 // Containers
 const TheContainer = () => import('@/containers/TheContainer')
 
@@ -74,9 +78,20 @@ function configRoutes () {
       component: Login
     },
     {
+      path: '/app',
+      name: 'app',
+      component: TheContainer,
+      children: [
+        {
+          path: 'product',
+          name: 'Product',
+          component: Product,
+        }
+      ]
+    },
+    {
       path: '/',
       name: 'home',
-      redirect: '/dasboard',
       component: TheContainer,
       children: [
         {

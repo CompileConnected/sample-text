@@ -4,13 +4,18 @@ export default [
     _children: [
       {
         _name: 'CSidebarNavItem',
-        name: 'Dashboard',
-        to: '/dashboard',
-        icon: 'cil-speedometer',
+        name: 'Product',
+        to: '/app/product',
         badge: {
           color: 'primary',
           text: 'NEW'
         }
+      },
+      {
+        _name: 'CSidebarNavItem',
+        name: 'Dashboard',
+        to: '/dashboard',
+        icon: 'cil-speedometer'
       },
       {
         _name: 'CSidebarNavTitle',
@@ -182,12 +187,7 @@ export default [
         _name: 'CSidebarNavItem',
         name: 'Widgets',
         to: '/widgets',
-        icon: 'cil-calculator',
-        badge: {
-          color: 'primary',
-          text: 'NEW',
-          shape: 'pill'
-        }
+        icon: 'cil-calculator'
       },
       {
         _name: 'CSidebarNavDivider',
