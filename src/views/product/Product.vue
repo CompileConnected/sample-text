@@ -1,7 +1,7 @@
 <template>
   <div>
     <CRow>
-      <CCol lg="6">
+      <CCol sm="12">
         <ProductTable :items="getShuffledUsersData()">
           <template #header>
             <CIcon name="cil-grid" /> Product Table

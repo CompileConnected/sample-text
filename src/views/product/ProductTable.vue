@@ -16,6 +16,11 @@
         :dark="dark"
         pagination
       >
+        <template #image="{item}">
+          <td>
+            <img :src="item.image" alt="CoreuiVue" />
+          </td>
+        </template>
       </CDataTable>
     </CCardBody>
   </CCard>
@@ -29,7 +34,15 @@ export default {
     fields: {
       type: Array,
       default() {
-        return ["id","name", "price", "actual_quantity", "reserve_quantity", "purchased_quantity"];
+        return [
+          "id",
+          "image",
+          "name",
+          "price",
+          "actual_quantity",
+          "reserve_quantity",
+          "purchased_quantity"
+        ];
       },
     },
     caption: {
