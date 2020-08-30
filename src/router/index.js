@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 //extendo
 const Product = () => import('@/views/product/Product')
+const ProductCreate = () => import('@/views/product/ProductCreate')
 
 
 // Containers
@@ -86,7 +87,12 @@ function configRoutes () {
           path: 'product',
           name: 'Product',
           component: Product,
-        }
+        },
+        {
+          path: 'product/create',
+          name: 'Create',
+          component: ProductCreate,
+        },
       ]
     },
     {

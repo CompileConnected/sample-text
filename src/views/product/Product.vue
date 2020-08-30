@@ -1,11 +1,21 @@
 <template>
   <div>
     <CRow>
+      <CCol lg="12" class="px-4 py-4 d-none d-sm-block">
+        <CButton color="primary" @click="gotoCreate">
+          <CIcon name="cilPlus" />&nbsp;Create
+        </CButton>
+      </CCol>
+
+      <CCol sm="3" class="px-4 py-4 d-block  d-sm-none">
+        <CButton color="primary" @click="gotoCreate">
+          <CIcon name="cilPlus" />
+        </CButton>
+      </CCol>
+
       <CCol sm="12">
         <ProductTable :items="getShuffledUsersData()">
-          <template #header>
-            <CIcon name="cil-grid" /> Product Table
-          </template>
+          <template #header> <CIcon name="cil-grid" /> Product Table </template>
         </ProductTable>
       </CCol>
     </CRow>
@@ -14,7 +24,7 @@
 
 <script>
 import ProductTable from "./ProductTable";
-import productMockData from './ProductMockData';
+import productMockData from "./ProductMockData";
 
 export default {
   name: "Product",
@@ -29,7 +39,9 @@ export default {
       }
       return array;
     },
-
+    gotoCreate() {
+      this.$router.push("/app/product/create");
+    },
     getShuffledUsersData() {
       return this.shuffleArray(productMockData.slice(0));
     },
