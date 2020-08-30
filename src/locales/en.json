@@ -1,0 +1,8 @@
+{
+	"message": "hello i18n !!",
+	"product.create.buyingprice.title.label": "Buying Price",
+	"product.create.company.title.label": "Company",
+	"product.create.itemname.title.label": "Item Name",
+	"product.create.quantity.title.label": "Quantity",
+	"product.create.sellingprice.title.label": "Selling Price"
+}
