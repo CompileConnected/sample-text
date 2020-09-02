@@ -8,8 +8,10 @@
           </CCardHeader>
           <CCardBody>
             <CCRow>
+              
               <CCol>
-                <CInputFile label="Add Image" accept="image/x-png,image/jpeg,image/gif" />
+                <label for="imageFile">Add Image</label>
+               <input type="file" id="imageFile"  accept="image/*" capture="environment" />
                 <CInput :label="$t('product.create.company.title.label')" placeholder="" />
                 <CInput :label="$t('product.create.itemname.title.label')" placeholder="" />
                 <CInput :label="$t('product.create.quantity.title.label')" placeholder="" />
